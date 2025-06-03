@@ -38,6 +38,6 @@ CHECK_USER(){
 CHECK_USER
 echo "$0 Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
-FOLDER="/home/ec2-user/log"
+FOLDER="/home/ec2-user/logs"
 FILES_TO_DELETE=$(find $FOLDER -name "*.log" -mtime +14)
 echo "Delete files are : $FILES_TO_DELETE"
