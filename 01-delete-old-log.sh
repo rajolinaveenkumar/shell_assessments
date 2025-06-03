@@ -41,3 +41,10 @@ echo "$0 Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 FOLDER="/home/ec2-user/logs"
 FILES_TO_DELETE=$(find $FOLDER -name "*.log" -mtime +14)
 echo "Delete files are : $FILES_TO_DELETE"
+
+while read -r filepath
+do 
+    echo "deleting files are: $filepath"
+    rm -rf $filepath
+    echo "Deleted file: $filepath"
+done <<<  $FILES_TO_DELETE
