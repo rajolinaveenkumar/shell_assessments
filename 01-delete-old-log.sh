@@ -9,10 +9,10 @@ UL="\e[4m"
 
 mkdir -p "/var/log/shell_logs"
 
-LOG_FOLDER="/var/log/shell_logs"
+LOG_SOURCE_DIR="/var/log/shell_logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+LOG_FILE_NAME="$LOG_SOURCE_DIR/$LOG_FILE-$TIMESTAMP.log"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -38,13 +38,13 @@ CHECK_USER(){
 CHECK_USER
 echo "$0 Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
-FOLDER="/home/ec2-user/logs"
-FILES_TO_DELETE=$(find $FOLDER -name "*.log" -mtime +14)
-echo "Delete files are : $FILES_TO_DELETE"
+SOURCE_DIR="/home/ec2-user/logs"
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+echo "Files to be deleted: $FILES_TO_DELETE"
 
-while read -r filepath
-do 
-    echo "deleting files are: $filepath"
+while read -r filepath # here filepath is the variable name, you can give any name
+do
+    echo "Deleting file: $filepath" &>>$LOG_FILE_NAME
     rm -rf $filepath
     echo "Deleted file: $filepath"
-done <<<  $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
