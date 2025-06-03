@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 UL="\e[4m"
 
-mkdir -p "/home/ec2-user/logs"
+mkdir -p "/var/log/shell_logs"
 
 LOG_FOLDER="/var/log/shell_logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
@@ -24,7 +24,6 @@ VALIDATE(){
     fi
 }
 
-echo "$0 Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 CHECK_USER(){
     if [ $USERID -ne 0 ]
@@ -37,3 +36,8 @@ CHECK_USER(){
 }
 
 CHECK_USER
+echo "$0 Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
+FOLDER="/home/ec2-user/log"
+FILES_TO_DELETE=$(find . -name "*.log" -mtime +14)
+echo "Delete files are : $FILES_TO_DELETE"
