@@ -58,6 +58,6 @@ else
 fi
 
 ZIPFILES="$DEST_DIR/backup-logs-$LOG_FILE-$TIMESTAMP.zip"
-$FILES | zip -@ "$ZIPFILES"
+$FILES | zip "$ZIPFILES" -@
 
 
