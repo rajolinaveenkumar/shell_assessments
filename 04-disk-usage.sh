@@ -9,6 +9,6 @@ do
     # echo "Disk usage on $line"
     USE=$(echo $line | awk -F " " '{print $6f}' | cut -d "%" -f1)
     PARTITION=$(echo $line | awk -F " " '{print $7f}')
-    echo $PARTITION $USE
+    echo "Disk Partition is: $PARTITION and Usage is : $USE"
 
 done <<< $DISK_USAGE
