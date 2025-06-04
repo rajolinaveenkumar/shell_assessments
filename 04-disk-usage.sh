@@ -6,6 +6,8 @@ MSG=""
 
 while read -r line
 do
-    echo "Disk usage on $line"
+    # echo "Disk usage on $line"
+    USE=$(echo $line | awk -F " " '{print $6f}')
+    echo $USE
 
 done <<< $DISK_USAGE
