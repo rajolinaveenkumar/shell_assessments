@@ -64,4 +64,7 @@ else
     exit 1
 fi
 
+ZIPFILES="$DEST_DIR/backup-logs-$LOG_FILE-$TIMESTAMP.zip"
+$FILES | zip -@ "$ZIPFILES"
+
 
