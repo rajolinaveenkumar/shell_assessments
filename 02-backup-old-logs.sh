@@ -32,7 +32,7 @@ SOURCE_DIR=$1
 DEST_DRI=$2
 DAYS=${3:-14}
 
-if [ $# -lt 2]
+if [ $# -lt 2 ]
 then
     USEAGE
 fi
