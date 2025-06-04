@@ -14,7 +14,7 @@ do
     # echo "Disk usage on $line"
     USE=$(echo $line | awk -F " " '{print $6f}' | cut -d "%" -f1)
     PARTITION=$(echo $line | awk -F " " '{print $7f}')
-    echo -e "Disk Partition is: $G $PARTITION $N and Usage is : $G $USE $N"
+    # echo -e "Disk Partition is: $G $PARTITION $N and Usage is : $G $USE $N"
     if [ $USE -gt $DISK_THRESHOLD ]
     then 
         echo -e "Disk Partition is: $R $PARTITION $N and Usage is : $R $USE $N"
