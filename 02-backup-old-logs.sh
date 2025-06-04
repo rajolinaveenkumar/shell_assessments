@@ -58,6 +58,7 @@ else
 fi
 
 ZIPFILES="$DEST_DIR/backup-logs-$LOG_FILE-$TIMESTAMP.zip"
-$FILES | zip "$ZIPFILES" -@
+find $SOURCE_DIR -mtime +14 -name "*.log" | zip -@ "$ZIPFILES"
+
 
 
