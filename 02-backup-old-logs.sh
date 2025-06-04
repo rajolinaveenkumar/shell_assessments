@@ -60,7 +60,7 @@ if [ -n $FILES ]
 then 
     echo "Files to zip are:$FILES"
 else
-    echi "no files to zip"
+    echo "no files to zip"
     exit 1
 fi
 
