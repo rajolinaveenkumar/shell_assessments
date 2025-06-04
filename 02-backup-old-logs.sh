@@ -51,9 +51,8 @@ then
     exit 1
 else
     echo "DEST_DIR found"
+fi
 
 FILES=$(find /var/log/old/source/ -mtime +14)
 
-echo "files are $FILES "
-
-
+echo "files are $FILES"
