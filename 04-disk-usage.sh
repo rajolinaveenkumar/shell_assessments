@@ -17,7 +17,7 @@ do
     # echo -e "Disk Partition is: $G $PARTITION $N and Usage is : $G $USAGE $N"
     if [ $USAGE -gt $DISK_THRESHOLD ]
     then 
-        MSG+="High Disk usage on partition: $PARTITION Usage is: $USAGE \n"
+        MSG+="High Disk usage on partition: ${R} $PARTITION ${N} Usage is: ${R}$USAGE ${N} \n"
     fi
 
 done <<< $DISK_USAGE
