@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=$(id -u)
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -13,13 +13,6 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOG_SOURCE_DIR/$LOG_FILE-$TIMESTAMP.log"
 
 
-if [ $USERID -ne 0 ]
-then
-    echo -e "ERROR:: $UL You must have sudo access to execute this script $N"
-    exit 1 # other than 0
-else 
-    echo -e "$G Script name: $0 is executing..... at $TIMESTAMP $N"
-fi
 
 USEAGE(){
     echo -e "${R} USEAGE: $N sh script_name <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
