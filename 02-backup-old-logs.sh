@@ -18,7 +18,7 @@ then
     echo -e "ERROR:: $UL You must have sudo access to execute this script $N"
     exit 1 # other than 0
 else 
-    echo -e "$G Script name: $0 is executing..... $N"
+    echo -e "$G Script name: $0 is executing..... at $TIMESTAMP $N"
 fi
 
 USEAGE(){
@@ -29,11 +29,31 @@ USEAGE(){
 mkdir -p "/var/log/shell_logs" # This is only to redirect the logs or track the history
 
 SOURCE_DIR=$1
-DEST_DRI=$2
+DEST_DIR=$2
 DAYS=${3:-14}
 
 if [ $# -lt 2 ]
 then
     USEAGE
 fi
+
+if [ ! -d $SOURCE_DIR ]
+then
+    echo "SOURCE_DIR not found"
+    exit 1
+else
+    echo "SOURCE_DIR found"
+fi
+
+if [ ! -d $DEST_DIR ]
+then
+    echo "DEST_DIR  not found"
+    exit 1
+else
+    echo "DEST_DIR found"
+
+FILES=$(find /var/log/old/source/ -mtime +14)
+
+echo "files are $FILES "
+
 
