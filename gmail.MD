@@ -34,6 +34,14 @@ smtp_sasl_security_options = noanonymous
 smtp_sasl_tls_security_options = noanonymous
 smtpd_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 ```
+```
+1. go to gmail and click on your icon and click on manage google account
+2. security and Turn on 2-Step Verification
+3. then search google app password in browser
+4. type anything then it will genarete a password and remove the spaces between password. like this (hajtnhvckztuhqey)
+5. and use the above and paswd in linux to configure 
+6. 
+```
  
 *  Configure Postfix SASL Credentials
 
