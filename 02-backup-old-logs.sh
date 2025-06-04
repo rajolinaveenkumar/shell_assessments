@@ -55,6 +55,13 @@ fi
 
 FILES=$(find /var/log/old/source/ -mtime +14 -name "*.log")
 
-echo "files are $FILES"
+
+if [ -n $FILES ]
+then 
+    echo "Files to zip are:$FILES"
+else
+    echi "no files to zip"
+    exit 1
+fi
 
 
