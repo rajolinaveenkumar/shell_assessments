@@ -22,7 +22,7 @@ else
 fi
 
 USEAGE(){
-    echo "${R} USEAGE: $N sh script_name <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
+    echo -e "${R} USEAGE: $N sh script_name <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
     exit 1
 }
 
