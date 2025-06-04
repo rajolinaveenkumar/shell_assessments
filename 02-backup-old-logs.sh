@@ -63,6 +63,8 @@ FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 if [ -n "$FILES" ] # true if there are files to zip
 then 
     echo "Files to zip are:$FILES"
+    ZIP_FILES="$DESTINATION_DIR/backuplogs-$TIMESTAMP.zip"
+    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ "$ZIP_FILES"
 else
     echo "no files found older than $DAYS days to delete"
     exit 1
