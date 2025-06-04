@@ -53,6 +53,8 @@ else
     echo "DEST_DIR found"
 fi
 
-FILES=$(find /var/log/old/source/ -mtime +14)
+FILES=$(find /var/log/old/source/ -mtime +14 -name "*.log")
 
 echo "files are $FILES"
+
+
