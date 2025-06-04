@@ -53,7 +53,7 @@ else
     echo "DEST_DIR found"
 fi
 
-FILES=$(find /var/log/old/source/ -mtime +14 -name "*.log")
+FILES=$(find $SOURCE_DIR -mtime +14 -name "*.log")
 
 
 if [ -n "$FILES" ]
