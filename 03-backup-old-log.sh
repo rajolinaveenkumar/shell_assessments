@@ -70,18 +70,3 @@ fi
 
 ZIP_FILES="$DESTINATION_DIR/backuplogs-$TIMESTAMP.zip"
 find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ "$ZIP_FILES"
-
-if [ -f "$ZIP_FILES" ] #The -f operator checks if the specified path is a regular file (not a directory, symlink, or other types of file)
-then 
-    echo "Successfully created zip file for files older than $DAYS"
-else 
-    echo "zipping error"
-    exit 1
-fi
-
-while read -r filepath # here filepath is the variable name, you can give any name
-do
-    echo "Deleting file: $filepath" &>>$LOG_FILE_NAME
-    rm -rf $filepath
-    echo "Deleted file: $filepath"
-done <<< $FILES
