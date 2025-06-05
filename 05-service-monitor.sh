@@ -20,7 +20,7 @@ SVCNAME=("nginx" "mysqld")
 
 for service in "${SVCNAME[@]}" 
 do
-    systemctl is-active $service
+    systemctl is-active $service &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]
     then 
         echo "$TIMESTAMP This services are not running:  $service Service"
