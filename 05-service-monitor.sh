@@ -18,28 +18,7 @@ LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 SVCNAME=("nginx" "mysqld")
 
-
-while read -r line
+for service in "${SVCNAME[@]}" 
 do
-    SERVICE=$(systemctl status $line) &>>$LOG_FILE_NAME
-    echo $SERVICE
-
-
-done <<< $SVCNAME
-
-
-
-
-
-
-
-
-
-# if [ $? -eq 0 ]
-# then    
-#     echo "nginx service is inactive"
-#     systemctl start nginx
-# else
-#     echo "nginx service is active"
-#     exit 1
-# fi
+    echo $service
+done
