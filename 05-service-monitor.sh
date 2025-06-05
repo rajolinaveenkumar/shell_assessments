@@ -24,6 +24,13 @@ do
     if [ $? -ne 0 ]
     then 
         echo "$TIMESTAMP This services are not running:  $service Service"
+        systemctl start $service
+        if [ $? -ne 0 ]
+        then
+            echo "Services failed to start: $service Service"
+        else
+            echo "All inactive services are started"
+        fi
     else
         echo "$TIMESTAMP This Service are running:  $service Service"
     fi
