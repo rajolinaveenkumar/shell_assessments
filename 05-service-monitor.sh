@@ -8,5 +8,5 @@ then
     systemctl start nginx
 else
     echo "nginx service is active"
-    exit
+    exit 1
 fi
