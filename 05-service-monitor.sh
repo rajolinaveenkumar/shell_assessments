@@ -29,7 +29,7 @@ do
         then
             echo "Services failed to start: $service Service"
         else
-            echo "All inactive services are started"
+            echo "$service Service Started successfully"
         fi
     else
         echo "$TIMESTAMP This Service are running:  $service Service"
