@@ -23,8 +23,8 @@ do
     systemctl is-active $service
     if [ $? -ne 0 ]
     then 
-        echo "This services are not running:  $service "
+        echo "$TIMESTAMP This services are not running:  $service Service"
     else
-        echo "This Service are running $service "
+        echo "$TIMESTAMP This Service are running:  $service Service"
     fi
 done
