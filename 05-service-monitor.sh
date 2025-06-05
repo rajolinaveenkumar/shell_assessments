@@ -20,8 +20,6 @@ SVCNAME=("nginx" "mysqld")
 
 for service in "${SVCNAME[@]}" 
 do
-    sytemctl is-active $service
-    # if [ $? -ne 0 ]
-    # then
-
+    echo $service
+    systemctl is-active $service
 done
