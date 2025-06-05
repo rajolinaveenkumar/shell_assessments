@@ -22,7 +22,7 @@ SVCNAME=("nginx" "mysqld")
 while read -r line
 do
     SERVICE=$(systemctl status $line) &>>$LOG_FILE_NAME
-    echo $line
+    echo $SERVICE
 
 
 done <<< $SVCNAME
